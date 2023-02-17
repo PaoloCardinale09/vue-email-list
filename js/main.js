@@ -9,6 +9,7 @@ createApp({
 
   methods: {
     generaEmail() {
+      this.emailGenerated = [];
       for (let index = 0; index < 10; index++) {
         axios
           .get("https://flynn.boolean.careers/exercises/api/random/mail")

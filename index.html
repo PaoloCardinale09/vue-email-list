@@ -40,14 +40,14 @@
   </head>
 
   <body>
-    <div id="app">
+    <div id="app" class="text-center p-5">
       <div class="btn btn-primary" @click="generaEmail()">Genera mail</div>
-      <ol>
+      <ol class="my-5">
         <li
           v-if="emailGenerated.length>=10"
           v-for="(email, index) in emailGenerated"
         >
-          {{ emailGenerated[index] + index }}
+          {{ emailGenerated[index] }}
         </li>
       </ol>
     </div>
