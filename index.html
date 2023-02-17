@@ -43,8 +43,11 @@
     <div id="app">
       <div class="btn btn-primary" @click="generaEmail()">Genera mail</div>
       <ol>
-        <li v-for="(email, index) in emailGenerated">
-          {{ emailGenerated[index] }}
+        <li
+          v-if="emailGenerated.length>=10"
+          v-for="(email, index) in emailGenerated"
+        >
+          {{ emailGenerated[index] + index }}
         </li>
       </ol>
     </div>

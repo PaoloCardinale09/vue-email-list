@@ -4,8 +4,6 @@ createApp({
   data() {
     return {
       emailGenerated: [],
-      emailGeneratedNonProxy: [],
-      activeEmail: "",
     };
   },
 
@@ -15,7 +13,6 @@ createApp({
         axios
           .get("https://flynn.boolean.careers/exercises/api/random/mail")
           .then((response) => {
-            this.activeEmail = index;
             // console.log(response.data.response);
             this.emailGenerated.push(response.data.response);
           });
