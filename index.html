@@ -41,9 +41,12 @@
 
   <body>
     <div id="app">
-      <ul>
-        <li></li>
-      </ul>
+      <div class="btn btn-primary" @click="generaEmail()">Genera mail</div>
+      <ol>
+        <li v-for="(email, index) in emailGenerated">
+          {{ emailGenerated[index] }}
+        </li>
+      </ol>
     </div>
   </body>
 </html>

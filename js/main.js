@@ -1,20 +1,29 @@
-for (let index = 0; index < 10; index++) {
-  axios
-    .get("https://flynn.boolean.careers/exercises/api/random/mail")
-    .then(function (response) {
-      console.log(response.data.response);
-    });
-}
-
 const { createApp } = Vue;
 
 createApp({
   data() {
     return {
-      message: "Hello Vue!",
+      emailGenerated: [],
+      emailGeneratedNonProxy: [],
+      activeEmail: "",
     };
   },
+
+  methods: {
+    generaEmail() {
+      for (let index = 0; index < 10; index++) {
+        axios
+          .get("https://flynn.boolean.careers/exercises/api/random/mail")
+          .then((response) => {
+            this.activeEmail = index;
+            // console.log(response.data.response);
+            this.emailGenerated.push(response.data.response);
+          });
+      }
+    },
+  },
 }).mount("#app");
+
 // Descrizione
 // Attraverso l'apposita API di Boolean
 // https://flynn.boolean.careers/exercises/api/random/mail
