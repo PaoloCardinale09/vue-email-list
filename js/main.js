@@ -4,13 +4,14 @@ createApp({
   data() {
     return {
       emailGenerated: [],
+      numberMail: "",
     };
   },
 
   methods: {
     generaEmail() {
       this.emailGenerated = [];
-      for (let index = 0; index < 10; index++) {
+      for (let index = 0; index < this.numberMail; index++) {
         axios
           .get("https://flynn.boolean.careers/exercises/api/random/mail")
           .then((response) => {

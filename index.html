@@ -41,10 +41,19 @@
 
   <body>
     <div id="app" class="text-center p-5">
+      <small class="d-block m-auto"
+        >Inserisci il numero di random mail da generare</small
+      >
+      <input
+        class="my-3 d-block m-auto"
+        type="number"
+        placeholder="Numero..."
+        v-model="numberMail"
+      />
       <div class="btn btn-primary" @click="generaEmail()">Genera mail</div>
       <ol class="my-5">
         <li
-          v-if="emailGenerated.length>=10"
+          v-if="emailGenerated.length>=numberMail"
           v-for="(email, index) in emailGenerated"
         >
           {{ emailGenerated[index] }}
